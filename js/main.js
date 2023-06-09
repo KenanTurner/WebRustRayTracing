@@ -20,7 +20,7 @@ const max_bounces_input = document.getElementById("max-bounces");
 
 scene_input.addEventListener("change", async function(e){
 	const scene_json = await (await fetch(e.target.value)).json();
-	text_input.value = JSON.stringify(scene_json, "null", "\t");
+	text_input.value = JSON.stringify(scene_json, null, "  ");
 	
 	render_btn.click();
 });
@@ -39,6 +39,6 @@ render_btn.addEventListener('click', () => {
 });
 
 const scene_json = await (await fetch("scenes/materials.json")).json();
-text_input.value = JSON.stringify(scene_json, "null", "\t");
+text_input.value = JSON.stringify(scene_json, null, "  ");
 
 render_btn.click();
