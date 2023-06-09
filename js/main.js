@@ -1,4 +1,4 @@
-import init, { draw } from '/pkg/ray_tracing_wasm.js';
+import init, { draw } from '../pkg/ray_tracing_wasm.js';
 
 const console_output = document.getElementById('console');
 const console_error = console.error;
