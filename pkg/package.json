@@ -1,0 +1,14 @@
+{
+  "name": "ray_tracing_wasm",
+  "version": "0.1.0",
+  "files": [
+    "ray_tracing_wasm_bg.wasm",
+    "ray_tracing_wasm.js",
+    "ray_tracing_wasm.d.ts"
+  ],
+  "module": "ray_tracing_wasm.js",
+  "types": "ray_tracing_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
