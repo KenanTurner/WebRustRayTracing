@@ -17,6 +17,7 @@ const img_width_input = document.getElementById("img-width");
 const img_height_input = document.getElementById("img-height");
 const samples_per_pixel_input = document.getElementById("samples-per-pixel");
 const max_bounces_input = document.getElementById("max-bounces");
+const download_btn = document.getElementById("download");
 
 scene_input.addEventListener("change", async function(e){
 	const scene_json = await (await fetch(e.target.value)).json();
@@ -36,6 +37,7 @@ render_btn.addEventListener('click', () => {
 	
 	const ctx = canvas.getContext('2d');
 	draw(ctx, text_input.value, img_width_input.valueAsNumber, img_height_input.valueAsNumber, samples_per_pixel_input.valueAsNumber, max_bounces_input.valueAsNumber);
+	download_btn.href = canvas.toDataURL('image/png').replace(/^data:image\/[^;]*/, 'data:application/octet-stream');
 });
 
 const scene_json = await (await fetch("scenes/materials.json")).json();

@@ -37,7 +37,7 @@
 			<a class="button" href="https://github.com/KenanTurner/WebRustRayTracing">View on GitHub</a>
 		</section>
 		
-		<div class="spacer"></div>
+		<hr>
 		
 		
 		<form onSubmit="return false;">
@@ -82,9 +82,11 @@
 		
 		
 		
-		<form>
+		<form onsubmit="return false;">
 			<label for="drawing">Output</label>
 			<canvas id="drawing" width="512" height="512"></canvas>
+			<br>
+			<a class="button" id="download" download="output.png">Download as image</a>
 		
 			<label for="console">Console</label>
 			<textarea class="u-full-width" id="console" autocomplete="off" autocorrect="off" disabled></textarea>
