@@ -1,0 +1,27 @@
+[package]
+name = "ray_tracing_wasm"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+cgmath = "0.18"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tobj = { version = "4.0", features = ["use_f64"] }
+rand = "0.8"
+getrandom = { version = "0.2", features = ["js"] }
+
+wasm-bindgen = "0.2.86"
+console_error_panic_hook = "0.1.7"
+
+[dependencies.web-sys]
+version = "0.3.4"
+features = [
+  'ImageData',
+  'CanvasRenderingContext2d',
+]

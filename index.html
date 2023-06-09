@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Basic Page Needs
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
+	<title>Ray Tracing with Rust!</title>
+	<meta name="description" content="Port of CSCE 441-A6 to Rust and compiled to webassembly">
+	<meta name="author" content="Kenan Turner">
+
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- FONT
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/custom.css">
+	
+	<!-- JS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script type="module" src="js/main.js"></script>
+
+</head>
+<body>
+	<!-- Note the usage of `type=module` here as this is an ES6 module -->
+    <script type="module">
+      
+    </script>
+
+	<!-- Primary Page Layout
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div class="container">
+		<section class="header">
+			<h2 class="title">Ray Tracing with Rust + WASM</h2>
+			<a class="button" href="https://github.com/KenanTurner/WhoopRadioDesktop">View on GitHub</a>
+		</section>
+		
+		<div class="spacer"></div>
+		
+		
+		<form onSubmit="return false;">
+			
+			<div class="row">
+				<div class="three columns">
+					<label for="scene-json">Scene Selection</label>
+					<select class="u-full-width" id="scene-json">
+						<option value="scenes/materials.json">materials.json</option>
+						<option value="scenes/spheres.json">spheres.json</option>
+						<option value="scenes/ellipsoids.json">ellipsoids.json</option>
+						<option value="scenes/shadows.json">shadows.json</option>
+						<option value="scenes/reflections.json">reflections.json</option>
+					</select>
+				</div>
+			</div>
+			
+			<label for="json">Scene JSON</label>
+			<textarea class="u-full-width" id="json" autocomplete="off" autocorrect="off"></textarea>
+			
+			<div class="row">
+				<div class="three columns">
+					<label for="img-width">Image width</label>
+					<input class="u-full-width" type="number" id="img-width" min="256" max="3840" value="512">
+				</div>
+				<div class="three columns">
+					<label for="img-height">Image height</label>
+					<input class="u-full-width" type="number" id="img-height" min="256" max="2160" value="512">
+				</div>
+				<div class="three columns">
+					<label for="samples-per-pixel">Samples Per Pixel</label>
+					<input class="u-full-width" type="number" id="samples-per-pixel" min="1" max="64" value="1">
+				</div>
+				<div class="three columns">
+					<label for="max-bounces">Max Reflection Bounces</label>
+					<input class="u-full-width" type="number" id="max-bounces" min="0" max="8" value="1">
+				</div>
+			</div>
+			
+			<button class="button-primary" id="render">render</button>
+		</form>
+		
+		
+		
+		<form>
+			<label for="drawing">Output</label>
+			<canvas id="drawing" width="512" height="512"></canvas>
+		
+			<label for="console">Console</label>
+			<textarea class="u-full-width" id="console" autocomplete="off" autocorrect="off" disabled></textarea>
+		</form>
+	</div>
+
+	<!-- End Document
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
